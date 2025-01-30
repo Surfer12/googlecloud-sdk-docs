@@ -1,0 +1,37 @@
+repository:
+  # Repository name
+  name: googlecloud-sdk-docs
+  
+  # Description
+  description: Documentation and resources for Google Cloud SDK
+
+  # Default branch
+  default_branch: main
+
+  # Repository topics
+  topics:
+    - google-cloud
+    - sdk
+    - documentation
+    - cloud-computing
+
+  # Repository settings
+  features:
+    issues: true
+    projects: false
+    wiki: false
+
+# Contribution guidelines
+contributing:
+  template: CONTRIBUTING.md
+  
+# Code of conduct
+code_of_conduct:
+  template: CODE_OF_CONDUCT.md
+
+# Funding options
+funding:
+  github: []
+  open_collective: []
+  patreon: []
+  custom: []
