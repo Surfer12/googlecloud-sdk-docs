@@ -1,46 +1,70 @@
-# Google Cloud SDK Documentation
+# Google GenAI Import Utility
 
-## Overview
-The Google Cloud SDK is a set of tools that enables developers to interact with Google Cloud services through command-line interfaces and programmatic access.
+## Prerequisites
 
-## Key Components
-- `gcloud`: Primary CLI for managing Google Cloud resources
-- `gsutil`: CLI for interacting with Google Cloud Storage
-- `bq`: Command-line tool for BigQuery
+### 1. Python Setup
+- Python 3.12+ installed
+- Virtual environment recommended
 
-## Installation
-### Prerequisites
-- Python 3.6+
-- pip package manager
+### 2. Google Cloud Project
+1. Create a Google Cloud project
+2. Enable Vertex AI API
+3. Set up authentication
 
-### Install Methods
-1. **Direct Download**
-   ```bash
-   curl https://sdk.cloud.google.com | bash
-   ```
+### 3. Authentication Methods
 
-2. **Package Managers**
-   - macOS (Homebrew): `brew install --cask google-cloud-sdk`
-   - Windows (Chocolatey): `choco install gcloudsdk`
+#### Option A: Application Default Credentials
+```bash
+gcloud auth application-default login
+```
 
-## Quick Start
-1. Initialize the SDK
-   ```bash
-   gcloud init
-   ```
+#### Option B: Service Account
+1. Create service account in Google Cloud Console
+2. Download JSON key file
+3. Set environment variable:
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service-account-key.json"
+```
 
-2. Authenticate
-   ```bash
-   gcloud auth login
-   ```
+### 4. Library Installation
+```bash
+pip install google-generativeai
+```
 
-## Documentation Resources
-- [Official Google Cloud SDK Documentation](https://cloud.google.com/sdk/docs)
-- [GitHub Repository](https://github.com/GoogleCloudPlatform/cloud-sdk-docker)
+## Configuration
 
-## Contribution Guidelines
-1. Report issues on the official GitHub repository
-2. Follow Google Cloud's contribution guidelines
+1. Update project details in `genai_import_utility.py`:
+```python
+client = genai.Client(
+    vertexai=True,
+    project="YOUR_PROJECT_ID",
+    location="YOUR_REGION"  # e.g., "us-central1"
+)
+```
+
+## Running the Script
+```bash
+python scripts/genai_import_utility.py
+```
+
+## Troubleshooting
+- Ensure all dependencies are installed
+- Verify Google Cloud project credentials
+- Check network connectivity
+- Confirm Vertex AI API is enabled
+
+## Error Handling
+The script includes basic error catching. If issues persist, check:
+- API permissions
+- Network configuration
+- Authentication status
+
+## Contributing
+1. Fork the repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create pull request
 
 ## License
-This repository contains documentation and examples. Refer to Google Cloud SDK's official licensing terms.
+[Specify your license]
