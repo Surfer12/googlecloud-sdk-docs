@@ -1,0 +1,14 @@
+[project]
+authors = ["Ryan Oates <ryanfullstack@icloud.com>"]
+channels = ["https://conda.modular.com/max", "https://conda.modular.com/max-nightly", "https://repo.prefix.dev/modular-community", "conda-forge"]
+description = "Add a short description here"
+name = "discrete_mathmatics_main"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pip = ">=25.0,<26"
+max = ">=24.6.0,<25"
+python = ">=3.12.8,<3.13"
